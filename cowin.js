@@ -5,6 +5,7 @@ function vaccineResult() {
   console.log(pin)
 
   document.getElementById('res').innerHTML = ""
+  document.getElementById('summary').innerHTML = ""
 
 
 
@@ -78,7 +79,12 @@ function vaccineResult() {
 
           if (cap > 0) {
 
-            let divCode = "<div class='col-md-4'><div class='card mb-4 box-shadow'><div class='card-body'> <p class='card-text'><b>Center:</b> " + cowinData.sessions[n].name + "<br> <b>Vaccine Name:</b>" + cowinData.sessions[n].vaccine + "<br> <b>Date:</b> " + cowinData.sessions[n].date + " <br> <b>Slots Available:</b> " + cowinData.sessions[n].available_capacity + "<br> <b>Mininum Age:</b> " + cowinData.sessions[n].min_age_limit + "<br> </p> <small class='text-muted'><a href='https://selfregistration.cowin.gov.in/'>Book your slot</a></small></div> </div> </div>"
+            let divCode = "<div class='col-md-4'><div class='card mb-4 box-shadow'><div class='card-body'> <p class='card-text'><b>Center:</b> " +
+              cowinData.sessions[n].name + "<br> <b>Vaccine Name:</b>" + cowinData.sessions[n].vaccine +
+              "<br> <b>Date:</b> " + cowinData.sessions[n].date + " <br> <b>Slots Available:</b> " + cowinData.sessions[n].available_capacity +
+              "<br> <b>Mininum Age:</b> " + cowinData.sessions[n].min_age_limit + "<br> </p><div class='d-flex justify-content-between align-items-center'><div class='btn-group'><button type='button' class='btn btn-sm btn-outline-secondary'><span class='small-font'>Dose 1</span><br>" +
+              cowinData.sessions[n].available_capacity_dose1 + "</button><button type='button' class='btn btn-sm btn-outline-secondary'><span class='small-font'>Dose 2</span><br>" +
+              cowinData.sessions[n].available_capacity_dose2 + "</button></div> <small class='text-muted'><a href='https://selfregistration.cowin.gov.in/'>Book your slot</a></small></div> </div> </div></div>"
             document.getElementById('res').innerHTML += divCode
           }
 
@@ -96,13 +102,11 @@ function vaccineResult() {
 
         // console.log("Kot?tayam")
 
-        centersArray.push("Availble slots: " + availableCap)
 
-        centersArray.push("Total centres listed: " + x)
 
         tCap = tCap + availableCap;
 
-        console.log(centersArray)
+        document.getElementById('summary').innerHTML = "Availble slots: " + availableCap + "<br>Total centres listed: " + y
 
 
       }
