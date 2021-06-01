@@ -1,3 +1,14 @@
+window.addEventListener("keydown", function(event) {
+  if (event.defaultPrevented) {
+    return; // Should do nothing if the default action has been cancelled
+  }
+  if (event.keyCode === 13) {
+    console.log("entered")
+    vaccineResult();
+  }
+})
+
+
 function vaccineResult() {
 
   pin = document.getElementById('pin').value

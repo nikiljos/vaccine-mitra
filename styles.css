@@ -5,3 +5,7 @@
 .small-font {
     font-size: smaller;
 }
+
+html {
+    scroll-behavior: smooth;
+}
