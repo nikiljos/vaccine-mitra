@@ -9,3 +9,32 @@
 html {
     scroll-behavior: smooth;
 }
+
+.slots {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.493), rgba(255, 255, 255, 0.493)), url(img/vac-bg.png);
+}
+
+.fixedbottom {
+    position: fixed;
+    bottom: -4px;
+    right: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+    /*   margin-right: 10px; */
+    margin-left: 20px !important;
+    width: 100px;
+}
+
+.small-img {
+    width: 80%;
+}
+
+.headText {
+    color: yellow;
+    width: 100%;
+    margin-top: 12px;
+    padding-bottom: 12px;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+}

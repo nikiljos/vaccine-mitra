@@ -15,18 +15,43 @@
 </head>
 
 <body>
-    <div class="album py-5 text-center" style="background-color: #e3f2fd;">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <a class="navbar-brand" href="#">VaccineMitra</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#slots">Slot Checker <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#stats">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- <div class="album py-5 text-center" style="background-color: #e3f2fd;">
         <div id="vData"></div>
-    </div>
-    <div class="album py-5 bg-light" id="slots">
+    </div> -->
+    <div class="album py-5 bg-light slots" id="slots">
         <div class="container">
             <div clas="main">
                 <div class="form-group mb-2 left">
                     <div class="text-center mb-4">
 
-                        <form class="form-inline">
+                        <form class="form-inline" onSubmit="return false;">
                             <input type="text" name="pin" id="pin" class="form-control mb-2" placeholder="Enter your Pin Code">
-                            <button onclick="vaccineResult()" id="button" type="button" value="send" class="btn btn-primary mb-2">View Slots</button>
+                            <button onclick="vaccineResult()" id="button-vac" type="button" class="btn btn-primary mb-2">View Slots</button>
                         </form>
                     </div>
                 </div>
@@ -42,7 +67,8 @@
             </div>
         </div>
     </div>
-    <div class="card-div">
+    <div class="card-div" id="stats">
+        <div class="headText">See this figures! Kerala is getting vaccinated sreally fast...</div>
 
         <!-- flip-card-container -->
         <div class="flip-card-container" style="--hue: 220">
@@ -51,9 +77,11 @@
                 <div class="card-front">
                     <figure>
                         <div class="img-bg"></div>
-                        <img src="img/1.png" alt="vaccine">
-                        <figcaption>Loading...</figcaption>
+                        <img src="img/1.png" alt="vaccine" class="img">
+                        <figcaption id='kTotalD1'>Loading...</figcaption>
                     </figure>
+                    <div class="descText text">People in Kerala has recieved atleast 1 dose of vaccine till now.</div>
+
 
 
                 </div>
@@ -61,10 +89,10 @@
                 <div class="card-back">
                     <figure>
                         <div class="img-bg"></div>
-                        <img src="img/1.png" alt="vaccine">
+                        <img src="img/1.png" alt="vaccine" class="img">
                     </figure>
 
-                    <button onclick="window.location.href='/#slots'">Check Availability</button>
+                    <button onclick="window.location.href='#slots'">Check Availability</button>
 
                     <button onclick="window.open('https://selfregistration.cowin.gov.in/')">Book your Slot</button>
 
@@ -83,9 +111,11 @@
                 <div class="card-front">
                     <figure>
                         <div class="img-bg"></div>
-                        <img src="img/2.png" alt="vaccine">
-                        <figcaption>Loading...</figcaption>
+                        <img src="img/2.png" alt="vaccine" class="img">
+                        <figcaption id="kTotalD2">Loading...</figcaption>
+
                     </figure>
+                    <div class="descText text">People in Kerala have recieved both doses till now.</div>
 
 
                 </div>
@@ -93,10 +123,10 @@
                 <div class="card-back">
                     <figure>
                         <div class="img-bg"></div>
-                        <img src="img/2.png" alt="vaccine">
+                        <img src="img/2.png" alt="vaccine" class="img">
                     </figure>
 
-                    <button onclick="window.location.href='/#slots'">Check Availability</button>
+                    <button onclick="window.location.href='#slots'">Check Availability</button>
 
                     <button onclick="window.open('https://selfregistration.cowin.gov.in/')">Book your Slot</button>
 
@@ -116,11 +146,11 @@
                 <div class="card-front">
                     <figure>
                         <div class="img-bg"></div>
-                        <img src="img/3.png" alt="vaccine">
-                        <figcaption id="tot">Loading...</figcaption>
+                        <img src="img/3.png" alt="vaccine" class="img">
+                        <figcaption id="totalShots">Loading...</figcaption>
                     </figure>
 
-                    test
+                    <div class="descText text">Vaccine Shots have been administered in Kerala till now.</div>
 
 
                 </div>
@@ -128,10 +158,10 @@
                 <div class="card-back">
                     <figure>
                         <div class="img-bg"></div>
-                        <img src="img/3.png" alt="Brohm Lake">
+                        <img src="img/3.png" alt="Brohm Lake" class="img">
                     </figure>
 
-                    <button onclick="window.location.href='/#slots'">Check Availability</button>
+                    <button onclick="window.location.href='#slots'">Check Availability</button>
 
                     <button onclick="window.open('https://selfregistration.cowin.gov.in/')">Book your Slot</button>
 
@@ -144,6 +174,18 @@
         </div>
         <!-- /flip-card-container -->
 
+    </div>
+
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4SaDefN5L4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+
+
+    <div class="fixedbottom">
+        <a href="#">
+            <img src="https://img.icons8.com/carbon-copy/100/000000/up-squared.png" class="small-img">
+        </a>
     </div>
     <script src="vaccine-stats.js"></script>
 

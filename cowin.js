@@ -1,19 +1,17 @@
-window.addEventListener("keydown", function(event) {
-  if (event.defaultPrevented) {
-    return; // Should do nothing if the default action has been cancelled
-  }
+var input = document.getElementById("pin");
+input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
-    console.log("entered")
-    vaccineResult();
+    event.preventDefault();
+    document.getElementById("button-vac").click();
   }
-})
-
+});
 
 function vaccineResult() {
 
   pin = document.getElementById('pin').value
 
   console.log(pin)
+
 
   document.getElementById('res').innerHTML = ""
   document.getElementById('summary').innerHTML = ""
@@ -49,11 +47,11 @@ function vaccineResult() {
 
   console.log(formattedDate)
 
-  url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + pin + "&date=" + formattedDate
-
+  url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + pin + "&date=" + formattedDate;
   axios.get(url)
     .then(function(response) {
       cowinData = response.data
+      console.log(url)
 
 
 
@@ -61,7 +59,7 @@ function vaccineResult() {
         return Object.keys(jsonData).length;
       }
 
-      // x = length(cowinData.centres);
+      x = length(cowinData.centers);
 
 
       // console.log(x)
@@ -78,34 +76,37 @@ function vaccineResult() {
 
 
 
+        for (m = 0; m < x; m++) {
 
 
 
-        y = cowinData.sessions.length
 
-        for (n = 0; n < y; n++) {
+          y = length(cowinData.centers[m].sessions)
 
-          var cap = cowinData.sessions[n].available_capacity;
-          availableCap = availableCap + cap
+          for (n = 0; n < y; n++) {
 
-          if (cap > 0) {
+            var cap = cowinData.centers[m].sessions[n].available_capacity;
+            availableCap = availableCap + cap
 
-            let divCode = "<div class='col-md-4'><div class='card mb-4 box-shadow'><div class='card-body'> <p class='card-text'><b>Center:</b> " +
-              cowinData.sessions[n].name + "<br> <b>Vaccine Name:</b>" + cowinData.sessions[n].vaccine +
-              "<br> <b>Date:</b> " + cowinData.sessions[n].date + " <br> <b>Slots Available:</b> " + cowinData.sessions[n].available_capacity +
-              "<br> <b>Mininum Age:</b> " + cowinData.sessions[n].min_age_limit + "<br> </p><div class='d-flex justify-content-between align-items-center'><div class='btn-group'><button type='button' class='btn btn-sm btn-outline-secondary'><span class='small-font'>Dose 1</span><br>" +
-              cowinData.sessions[n].available_capacity_dose1 + "</button><button type='button' class='btn btn-sm btn-outline-secondary'><span class='small-font'>Dose 2</span><br>" +
-              cowinData.sessions[n].available_capacity_dose2 + "</button></div> <small class='text-muted'><a href='https://selfregistration.cowin.gov.in/'>Book your slot</a></small></div> </div> </div></div>"
-            document.getElementById('res').innerHTML += divCode
+            if (cap > 0) {
+
+              let divCode = "<div class='col-md-4'><div class='card mb-4 box-shadow'><div class='card-body'> <p class='card-text'><b>Center:</b> " +
+                cowinData.centers[m].name + "<br> <b>Vaccine Name:</b>" + cowinData.centers[m].sessions[n].vaccine +
+                "<br> <b>Date:</b> " + cowinData.centers[m].sessions[n].date + " <br> <b>Slots Available:</b> " + cowinData.centers[m].sessions[n].available_capacity +
+                "<br> <b>Mininum Age:</b> " + cowinData.centers[m].sessions[n].min_age_limit + "<br> </p><div class='d-flex justify-content-between align-items-center'><div class='btn-group'><button type='button' class='btn btn-sm btn-outline-secondary'><span class='small-font'>Dose 1</span><br>" +
+                cowinData.centers[m].sessions[n].available_capacity_dose1 + "</button><button type='button' class='btn btn-sm btn-outline-secondary'><span class='small-font'>Dose 2</span><br>" +
+                cowinData.centers[m].sessions[n].available_capacity_dose2 + "</button></div> <small class='text-muted'><a href='https://selfregistration.cowin.gov.in/'>Book your slot</a></small></div> </div> </div></div>"
+              document.getElementById('res').innerHTML += divCode
+            }
+
+
+
+
+
+
+
+
           }
-
-
-
-
-
-
-
-
         }
 
 
@@ -117,7 +118,7 @@ function vaccineResult() {
 
         tCap = tCap + availableCap;
 
-        document.getElementById('summary').innerHTML = "Availble slots: " + availableCap + "<br>Total centres listed: " + y
+        document.getElementById('summary').innerHTML = "Availble slots: " + availableCap + "<br>Total centres listed: " + x
 
 
       }
