@@ -11,5 +11,6 @@ function vaccineStats() {
       document.getElementById('kTotalD1').innerHTML = vacData.summary.tot_person_vaccinations
       document.getElementById('kTotalD2').innerHTML = vacData.summary.second_dose
       document.getElementById('totalShots').innerHTML = vacData.summary.tot_vaccinations
+      document.getElementById('lastUpdate').innerHTML = vacData.last_updated
     })
 }

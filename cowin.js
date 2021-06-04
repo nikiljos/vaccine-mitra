@@ -119,7 +119,7 @@ function vaccineResult() {
         tCap = tCap + availableCap;
 
         document.getElementById('summary').innerHTML = "Availble slots: " + availableCap + "<br>Total centres listed: " + x
-
+        document.getElementById('cowinURL').innerHTML = "<a href='" + url + "' target='_blank'>CoWin API</a>"
 
       }
     })
