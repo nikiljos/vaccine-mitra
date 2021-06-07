@@ -267,9 +267,15 @@
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a34787302e094f08b1746aa26106c151"}'></script>
-    <!-- End Cloudflare Web Analytics -->
+    <!-- analytics -->
+    <script>
+        axios.post('https://nik-analytics.herokuapp.com/')
+    </script>
+    <!-- end of analytics code -->
+
+
+
+
 
 </body>
 
