@@ -10,8 +10,17 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    color: rgb(0, 0, 0);
+}
+
+
+/* .card-body {
+    color: rgb(255, 255, 255);
+} */
+
 .slots {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.493), rgba(255, 255, 255, 0.493)), url(img/vac-bg.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(img/vac-bg.png);
 }
 
 .fixedbottom {
@@ -38,12 +47,13 @@ html {
     position: relative;
 }
 
-.yellow {
+
+/* .yellow {
     color: rgb(236, 211, 67);
-}
+} */
 
 .embeds {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.493), rgba(255, 255, 255, 0.493)), url(img/back3.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(img/back3.jpg);
 }
 
 .src-footer {
@@ -53,16 +63,18 @@ html {
     position: relative;
 }
 
-.yellow-footer {
-    right: 10px;
-    margin-left: 20px !important;
+.cd-footer {
     text-align: right !important;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background: hsl(219, 51%, 89%);
 }
 
-.highlight {
+
+/* .highlight {
     background-color: rgba(255, 255, 255, 0.877);
     border-radius: 5%;
-}
+} */
 
 ::-webkit-scrollbar {
     width: 8px;
