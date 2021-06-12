@@ -58,6 +58,7 @@ body {
 
 .src-footer {
     right: 10px;
+    margin-top: 10px;
     margin-left: 20px !important;
     text-align: right !important;
     position: relative;
