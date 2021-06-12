@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 body {
-    background: linear-gradient(0deg, #fff, 50%, #DEEEFE);
-    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(0deg, #fff, 50%, #d3e4f5);
     background: #455A64;
     /* height: 100 !important */
 }
 
 .container-fluid {
+    font-family: 'Rubik', sans-serif;
     overflow: hidden;
     /* margin-top: 250px; */
     background: #262626;

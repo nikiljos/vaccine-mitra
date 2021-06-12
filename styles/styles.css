@@ -20,7 +20,7 @@ body {
 } */
 
 .slots {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(img/vac-bg.png);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), hsl(219, 51%, 89%));
 }
 
 .fixedbottom {
@@ -35,7 +35,7 @@ body {
 }
 
 .small-img {
-    width: 80%;
+    width: 50%;
 }
 
 .headText {
@@ -53,7 +53,7 @@ body {
 } */
 
 .embeds {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(img/back3.jpg);
+    background-image: linear-gradient( hsl(219, 51%, 89%), rgba(100, 100, 100, 0.6));
 }
 
 .src-footer {
