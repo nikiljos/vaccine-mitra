@@ -45,13 +45,13 @@ function vaccineResult() {
 
   var formattedDate = date + "-" + month + "-" + year;
 
-  console.log(formattedDate)
+  // console.log(formattedDate)
 
   url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=" + pin + "&date=" + formattedDate;
   axios.get(url)
     .then(function(response) {
       cowinData = response.data
-      console.log(url)
+        // console.log(url)
 
 
 
