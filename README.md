@@ -1,1 +1,3 @@
-# vaccine-mitra
+# VaccineMitra
+
+A website for everythong related to vaccination....
